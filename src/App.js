@@ -4,12 +4,11 @@ import './index.scss';
 
 function App() {
 
-  const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(true)
 
-  return (
-    <div className="App">
-      { modal ? (
-        <div className="overlay">
+  return (    
+    <div className="App">            
+      <div className={`overlay animated ${modal ? 'show' : ''}`}>
         <div className="modal">
           <svg onClick={() => setModal(false)} height="200" viewBox="0 0 200 200" width="200">
             <title />
@@ -18,7 +17,7 @@ function App() {
           <img src="https://media2.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" />
         </div>
       </div>
-      ) : <button className="open-modal-btn" onClick={() => setModal(true)}>✨ Открыть окно</button> }            
+      <button className="open-modal-btn" onClick={() => setModal(true)}>✨ Открыть окно</button>
     </div>
   );
 }
